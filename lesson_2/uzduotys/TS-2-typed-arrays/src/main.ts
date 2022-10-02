@@ -86,10 +86,10 @@ console.group('Užduotys');
   {
     const numbers: number[] = [1, -8, -6, 7, 5, 1];
 
-    function addPositiveNumbers(arr) {
-      const positiveNumberReducer = (sum, num) => (num > 0 ? sum + num : sum);
+    function addPositiveNumbers(arr: number[]) {
+      const positiveNumberReducer = (sum: number, num: number) => (num > 0 ? sum + num : sum);
 
-      return arr.reduce(positiveNumberReducer, 0);
+      return arr.reduce<number>(positiveNumberReducer, 0);
     }
 
     console.log({
