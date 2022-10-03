@@ -107,6 +107,19 @@ console.group('Užduotys');
        * ['Lietuvos', 'Respublikos', 'Televizija'] -> LRT
        * ['Loughing', 'Out', 'Loud'] -> LOL
     */
+
+      const dataSamples: string[][] = [
+        ['Lietuviškas', 'Nepriklausomas', 'Kanalas'],
+        ['Lietuvos', 'Respublikos', 'Televizija'],
+        ['Loughing', 'Out', 'Loud'],
+      ];
+
+      dataSamples.forEach(
+        (words: string[]) => {
+          const firstLetter = words.map((word) => word[0]);
+          const completeAcronym = firstLetter.join("");
+          console.log(completeAcronym);
+        })
   }
   console.groupEnd();
 
