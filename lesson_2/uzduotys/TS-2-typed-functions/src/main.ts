@@ -49,21 +49,21 @@ printRedText('printRed funkcijos argumentas');
 
 console.group('1. Aprašykite funkcijoms tipus jas deklaruojant');
 {
-  const multiply = (a, b) => {
+  const multiply = (a: number, b: number): number => {
     return a * b;
   };
 
-  const power = function (base, power) {
+  const power = function (base: number, power: number): number {
     return base ** power;
   };
 
-  const squareRoot = (number) => number ** (1 / 2);
+  const squareRoot = (number: number): number => number ** (1 / 2);
 
-  const root = function (base, nthRoot) {
+  const root = function (base: number, nthRoot: number): number {
     return base ** (1 / nthRoot);
   }
 
-  const printBlueText = (text) => console.log(`%c${text}`, 'color: #0000ee');
+  const printBlueText = (text: string): void => console.log(`%c${text}`, 'color: #0000ee');
 
   const num1: number = 16;
   const num2: number = 4;
@@ -82,21 +82,27 @@ console.groupEnd();
 
 console.group('2. Aprašykite funkcijų tipus prieš deklaruojant funkcijas');
 {
-  const multiply = (a, b) => {
+
+  type CalcFunc = (a: number, b: number) => number;
+  type SquareFunc = (a: number) => number;
+
+  const multiply: CalcFunc = (a, b) => {
     return a * b;
   };
 
-  const power = function (base, power) {
+  const power: CalcFunc = function (base, power) {
     return base ** power;
   };
 
-  const squareRoot = (number) => number ** (1 / 2);
+  const squareRoot: SquareFunc = (number) => number ** (1 / 2);
 
-  const root = function (base, nthRoot) {
+  const root: CalcFunc = function (base, nthRoot) {
     return base ** (1 / nthRoot);
   }
 
-  const printBlueText = (text) => console.log(`%c${text}`, 'color: #0000ee');
+  type printText = (text: string) => void;
+
+  const printBlueText: printText = (text) => console.log(`%c${text}`, 'color: #0000ee');
 
   const num1: number = 16;
   const num2: number = 4;

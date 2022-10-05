@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #button {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bolder;
+        color: rgb(51, 48, 48);
+        border-radius: 30px;
+        padding: 10px;
+        background-color: rgb(240, 209, 252);
+      }
+      
+      .square-container {
+        display: flex;
+      }
+
+      .square {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+        margin-top: 5px;
+        background-color: rgb(109, 15, 172);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">Click me!</button>
+
+    <p id="count-container"></p>
+
+    <div id="square-container" class="square-container"></div>
+
+    <script src="assertions.js"></script>
+  </body>
+</html>

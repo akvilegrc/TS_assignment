@@ -37,24 +37,60 @@ enum WeekDayNamesLT {
 console.group('Literal types - užduotys');
 {
   // ↓↓↓↓ Tipus ir užduotims bendrus kintamuosius aprašykite čia ↓↓↓↓
+enum LithuanianCities {
+  Vilnius = "Vilnius",
+  Kaunas = "Kaunas",
+  Klaipėda = "Klaipėda",
+  Šiauliai = "Šiauliai",
+  Panevėžys = "Panevėžys"
+}
 
+enum LargestPopulation {
+  China, 
+  India,
+  UnitedStates,
+  Indonesia,
+  Pakistan
+}
+
+enum HighestGDP {
+  UnitedStates = 1,
+  China,
+  Japan,
+  Germany,
+  UnitedKingdom
+}
   // ↑↑↑↑ Tipus ir užduotims bendrus kintamuosius aprašykite čia ↑↑↑↑
 
   console.group("1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.");
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+    const city1: LithuanianCities = LithuanianCities.Kaunas;
+    const city2: LithuanianCities = LithuanianCities.Klaipėda;
+    const city3: LithuanianCities = LithuanianCities.Šiauliai;
+
+    console.log(`${city1}, ${city2}, ${city3}`)
   }
   console.groupEnd();
 
   console.group('2. Sukurkite 5 šalių su didžiausiu gyventojų skaičiumi skaitinį išvardinimą.');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+    const largestPopulation: LargestPopulation[] = [LargestPopulation.China, LargestPopulation.Pakistan];
+
+    console.log(largestPopulation);
   }
   console.groupEnd();
 
   console.group('3. Sukurkite 5 šalių su didžiausiu BVP skaitinį išvardinimą pradedant "1".');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+    const higherstGDP: HighestGDP[] = [
+      HighestGDP.UnitedStates,
+      HighestGDP.China,
+      HighestGDP.Japan,
+      HighestGDP.Germany,
+      HighestGDP.UnitedKingdom
+    ];
+
+    console.log(higherstGDP);
   }
   console.groupEnd();
 

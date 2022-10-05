@@ -86,10 +86,10 @@ console.group('Užduotys');
   {
     const numbers: number[] = [1, -8, -6, 7, 5, 1];
 
-    function addPositiveNumbers(arr) {
-      const positiveNumberReducer = (sum, num) => (num > 0 ? sum + num : sum);
+    function addPositiveNumbers(arr: number[]) {
+      const positiveNumberReducer = (sum: number, num: number) => (num > 0 ? sum + num : sum);
 
-      return arr.reduce(positiveNumberReducer, 0);
+      return arr.reduce<number>(positiveNumberReducer, 0);
     }
 
     console.log({
@@ -107,6 +107,19 @@ console.group('Užduotys');
        * ['Lietuvos', 'Respublikos', 'Televizija'] -> LRT
        * ['Loughing', 'Out', 'Loud'] -> LOL
     */
+
+      const dataSamples: string[][] = [
+        ['Lietuviškas', 'Nepriklausomas', 'Kanalas'],
+        ['Lietuvos', 'Respublikos', 'Televizija'],
+        ['Laughing', 'Out', 'Loud'],
+      ];
+
+      dataSamples.forEach(
+        (words: string[]) => {
+          const firstLetter = words.map((word) => word[0]);
+          const completeAcronym = firstLetter.join("");
+          console.log(completeAcronym);
+        })
   }
   console.groupEnd();
 

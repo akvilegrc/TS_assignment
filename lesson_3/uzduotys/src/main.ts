@@ -1,19 +1,37 @@
+const names: string[] = ["Petras", "Jonas", "Antanas", "Jurgis", "Zenonas", "Juozas"];
 
 console.group('1. Parašykite funkciją, kuri atspausdina paskutinio masyvo elemento indeksą');
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  function result (arr: string[]): void {
+    console.log(arr.length - 1);
+  }
+
+  console.log(names);
+  result(names);
 }
 console.groupEnd();
 
 console.group('2. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indeksus eilutėmis');
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  function result(arr: string[]): void {
+    for (let i = 0; i < arr.length; i++) console.log(i);
+  }
+
+  console.log(names);
+  result(names);
+
 }
 console.groupEnd();
 
 console.group('3. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento reikšmes eilutėmis');
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  function result(arr: string[]): void {
+    for (let i = 0; i < arr.length; i++) console.log(arr[i]);
+  }
+
+  console.log(names);
+  result(names);
+
 }
 console.groupEnd();
 
@@ -22,13 +40,23 @@ console.group('4. Parašykite funkciją, kuri atspausdina kiekvieno masyvo eleme
 // [1] => reikšmė
 // [2] => reikšmė
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  function result(arr: string[]): void {
+    for (let i = 0; i < arr.length; i++) console.log(`[${i}] => ${arr[i]}`);
+  }
+
+  console.log(names);
+  result(names);
 }
 console.groupEnd();
 
 console.group('5. Parašykite funkciją, kuri atspausdina masyvo elementus atbuline tvarka eilutėmis, iš galo.');
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  function result(arr: string[]): void {
+    for (let i = arr.length - 1; i >= 0; i--) console.log(arr[i]);
+  }
+
+  console.log(names);
+  result(names);
 }
 console.groupEnd();
 
