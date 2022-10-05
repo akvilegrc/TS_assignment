@@ -165,25 +165,77 @@ console.groupEnd();
 
 console.groupCollapsed('3. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą');
 {
+  type TaskProps = {
+    name: Person["name"],
+    surname: Person["surname"],
+    sex: Person["sex"]
+  }
+
+  const selectTaskProps = ({name, surname, sex}: Person): TaskProps => ({
+    name, surname, sex
+  });
+
+  const result: TaskProps[] = people.map(selectTaskProps);
+
+  console.table(people);
+  console.table(result);
 
 }
 console.groupEnd();
 
 console.groupCollapsed('4. Suformuokite visų vyrų masyvą');
 {
+  type Male = Omit<Person, "sex"> & {
+    sex: "male"
+  }
 
+  const isMale = ({sex}: Person): boolean => sex === "male";
+
+  const men: Male[] = people.filter(isMale) as Male[];
+
+  console.table(people);
+  console.table(men);
 }
 console.groupEnd();
 
 console.groupCollapsed('5. Suformuokite visų moterų masyvą');
 {
-
+  type Female = Omit<Person, "sex"> & {
+    sex: "female"
+  }
+  
+  const isFemale = ({sex}: Person): boolean => sex === "female";
+  
+  const women: Female[] = people.filter(isFemale) as Female[];
+  
+  console.table(people);
+  console.table(women);
 }
 console.groupEnd();
 
 console.groupCollapsed('6. Suformuokite objektų masyvą su žmonių vardais ir pavardėm, kurie turi mašinas');
 {
+  type Identity = {
+    name: Person['name'],
+    surname: Person['surname'],
+  };
+  
+  const personHasCar = ({hasCar}: Person): boolean => Boolean(hasCar);
 
+  const createIdentity = ({name, surname}: Person): Identity => ({name, surname});
+
+  const identityReducer = (result: Identity[], {hasCar, name, surname}: Person): Identity[] => {
+    if (hasCar) result.push({name, surname})
+    return result;
+  }
+
+  const peopleWithCars: Person[] = people.filter(personHasCar);
+  const identities: Identity[] = peopleWithCars.map(createIdentity);
+  const identities2: Identity[] = people.reduce(identityReducer, []);
+
+  console.table(people);
+  console.table(identities);
+  console.table(identities2);
 }
 console.groupEnd();
 
