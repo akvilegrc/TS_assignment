@@ -111,7 +111,7 @@ console.group('Užduotys');
       const dataSamples: string[][] = [
         ['Lietuviškas', 'Nepriklausomas', 'Kanalas'],
         ['Lietuvos', 'Respublikos', 'Televizija'],
-        ['Loughing', 'Out', 'Loud'],
+        ['Laughing', 'Out', 'Loud'],
       ];
 
       dataSamples.forEach(
